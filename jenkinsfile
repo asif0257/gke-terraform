@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Git Checkout') {
             steps {
-               git credentialsId: 'git-token', url: 'https://github.com/asif0257/jenkins-tf.git'
+               git credentialsId: 'git-token', url: 'https://github.com/asif0257/gke-terraform.git'
             }
         }
         
