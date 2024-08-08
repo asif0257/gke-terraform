@@ -3,6 +3,8 @@ pipeline {
  
     environment {
         GIT_TOKEN = credentials('git-token')
+        TF_VAR_project = 'asif-praveen-gke'
+        
     }
  
     stages {

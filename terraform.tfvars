@@ -1,3 +1,4 @@
+
 vpc_name    = "my-vpc"
 region      = "us-central1"
 router_name = "my-router"
