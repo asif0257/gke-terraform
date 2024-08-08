@@ -1,8 +1,12 @@
+provider "google" {
+  project = var.project
+  region  = "us-central1"
+}
+
 variable "project" {
   description = "The project ID to deploy resources"
   type        = string
 }
-
 
 variable "vpc_name" {
   description = "The name of the VPC network"
