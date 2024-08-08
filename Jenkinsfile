@@ -7,14 +7,14 @@ pipeline {
         
     }
 
-    parameters {
-        string(name: 'GIT_BRANCH', defaultValue: 'main', description: 'Branch to build')
-    }
+    // parameters {
+    //     string(name: 'GIT_BRANCH', defaultValue: 'main', description: 'Branch to build')
+    // }
  
     stages {
         stage('Git Checkout') {
             steps {
-               git branch: "${params.GIT_BRANCH}", git credentialsId: 'git-token', url: 'https://github.com/asif0257/gke-terraform.git'
+               git branch: 'main' , git credentialsId: 'git-token', url: 'https://github.com/asif0257/gke-terraform.git'
             }
         }
         
