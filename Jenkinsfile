@@ -1,11 +1,11 @@
 pipeline {
     agent any
  
-    environment {
-        GIT_TOKEN = credentials('git-token')
-        TF_VAR_project = 'asif-praveen-gke'
+    // environment {
+    //     // GIT_TOKEN = credentials('git-token')
+    //     TF_VAR_project = 'asif-praveen-gke'
         
-    }
+    // }
 
     // parameters {
     //     string(name: 'GIT_BRANCH', defaultValue: 'main', description: 'Branch to build')
