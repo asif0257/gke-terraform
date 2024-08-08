@@ -1,0 +1,45 @@
+pipeline {
+    agent any
+ 
+    environment {
+        GIT_TOKEN = credentials('git-token')
+    }
+ 
+    stages {
+        stage('Git Checkout') {
+            steps {
+               git credentialsId: 'git-token', url: 'https://github.com/asif0257/jenkins-tf.git'
+            }
+        }
+        
+        stage('Terraform Init') {
+            steps {
+                script {
+                    sh 'terraform init'
+                }
+            }
+        }
+        
+        stage('Terraform Plan') {
+            steps {
+                script {
+                    sh 'terraform plan -out=tfplan'
+                }
+            }
+        }
+
+     stage('Manual Approval') {
+            steps {
+                input "Approve?"
+            }
+        }
+     
+        stage('Terraform Apply') {
+            steps {
+                script {
+                    sh 'terraform apply tfplan'
+                }
+            }
+        }
+    }
+}
