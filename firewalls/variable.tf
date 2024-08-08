@@ -14,3 +14,8 @@ variable "vpc_id" {
   description = "The ID of the VPC"
   type        = string
 }
+
+variable "project" {
+  description = "The project ID to deploy resources"
+  type        = string
+}

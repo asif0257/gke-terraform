@@ -18,3 +18,8 @@ variable "region" {
   description = "The region for the NAT gateway"
   type        = string
 }
+
+variable "project" {
+  description = "The project ID to deploy resources"
+  type        = string
+}

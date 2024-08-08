@@ -2,16 +2,19 @@ resource "google_compute_router" "nat_router" {
   name    = var.router_name
   network = var.vpc_id
   region  = var.region
+  project = var.project
 }
 
 resource "google_compute_address" "address" {
   count  = 1
   name   = "nat-manual-ip-${count.index}"
   region =  var.region
+  project = var.project
 }
 
 
 resource "google_compute_router_nat" "nat_gw" {
+  project                  = var.project
   name                     = var.nat_name
   router                   = google_compute_router.nat_router.name
   region                   = var.region

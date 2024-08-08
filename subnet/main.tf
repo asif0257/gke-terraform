@@ -4,4 +4,5 @@ resource "google_compute_subnetwork" "subnet" {
   ip_cidr_range = var.subnet_configs[count.index].cidr
   region       = var.region
   network      = var.vpc_id
+  project = var.project
 }
